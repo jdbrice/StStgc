@@ -1,0 +1,11 @@
+.sl73_gcc485/
+*.root
+temp_gccflags.c
+*.tar.gz
+sand
+in
+LOG
+log
+*.log
+**/CVS
+**/.consign
