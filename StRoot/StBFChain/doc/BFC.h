@@ -1402,7 +1402,7 @@ Bfc_st BFC[] = {
   {"stgc", "STGCChain","", "stgcDat", "StMaker", "StChain", "STGC Chain", kFALSE},
   {"stgcDat", "stgc_raw","STGCChain", "rts,db,StgcUtil", "StStgcHitMaker", "StEvent,StStgcHitMaker",
                                                                                   "sTGC raw maker",kFALSE},
-  {"stgcQA", "stgc_qa","STGCChain", "rts,db,StgcUtil", "StStgcQAMaker", "StEvent,StStgcQAMaker",
+  {"stgcQA", "stgc_qa","STGCChain", "rts,db,StgcUtil", "StStgcQAMaker", "StEvent,StStgcQAMaker,StStgcDbMaker",
                                                                                   "sTGC QA maker",kFALSE},
   {"mtdSim" ,"","MtdChain","","StMtdSimMaker", "StEvent,StMtdSimMaker","MTD Simulator",kFALSE},
   {"ToF" ,"TofChain","","tofDat,tofrMatch,tofpMatch,tofCalib,geant","StMaker","StChain","ToF Chain",kFALSE},

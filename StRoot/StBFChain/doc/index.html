@@ -889,7 +889,7 @@
 <tr><td><A NAME="ETOFSIM0">ETofSim</A></td><td>&nbsp;</td><td>ETofChain</td><td>&nbsp; </td><td>StETofSimMaker</td><td>StETofSimMaker</td><td>ETOF simulator</td></tr>
 <tr><td><A NAME="STGC0">stgc</A></td><td>STGCChain</td><td>&nbsp;</td><td><A HREF="#STGCDAT0">stgcDat</A> </td><td>StMaker</td><td>StChain</td><td>STGC Chain</td></tr>
 <tr><td><A NAME="STGCDAT0">stgcDat</A></td><td>stgc_raw</td><td>STGCChain</td><td><A HREF="#RTS0">rts</A> <A HREF="#DB0">db</A> <A HREF="#STGCUTIL0">StgcUtil</A> </td><td>StStgcHitMaker</td><td>StEvent StStgcHitMaker</td><td>sTGC raw maker</td></tr>
-<tr><td><A NAME="STGCQA0">stgcQA</A></td><td>stgc_qa</td><td>STGCChain</td><td><A HREF="#RTS0">rts</A> <A HREF="#DB0">db</A> <A HREF="#STGCUTIL0">StgcUtil</A> </td><td>StStgcQAMaker</td><td>StEvent StStgcQAMaker</td><td>sTGC QA maker</td></tr>
+<tr><td><A NAME="STGCQA0">stgcQA</A></td><td>stgc_qa</td><td>STGCChain</td><td><A HREF="#RTS0">rts</A> <A HREF="#DB0">db</A> <A HREF="#STGCUTIL0">StgcUtil</A> </td><td>StStgcQAMaker</td><td>StEvent StStgcQAMaker StStgcDbMaker</td><td>sTGC QA maker</td></tr>
 <tr><td><A NAME="MTDSIM0">mtdSim</A></td><td>&nbsp;</td><td>MtdChain</td><td>&nbsp; </td><td>StMtdSimMaker</td><td>StEvent StMtdSimMaker</td><td>MTD Simulator</td></tr>
 <tr><td><A NAME="TOF0">ToF</A></td><td>TofChain</td><td>&nbsp;</td><td><A HREF="#TOFDAT0">tofDat</A> <A HREF="#TOFRMATCH0">tofrMatch</A> <A HREF="#TOFPMATCH0">tofpMatch</A> <A HREF="#TOFCALIB0">tofCalib</A> <A HREF="#GEANT0">geant</A> </td><td>StMaker</td><td>StChain</td><td>ToF Chain</td></tr>
 <tr><td><A NAME="TOFX0">ToFx</A></td><td>TofChain</td><td>&nbsp;</td><td><A HREF="#TOFXDAT0">tofXDat</A> <A HREF="#TOFRMATCH0">tofrMatch</A> <A HREF="#TOFCALIB0">tofCalib</A> <A HREF="#GEANT0">geant</A> </td><td>StMaker</td><td>StChain</td><td>ToFx Chain</td></tr>
@@ -1941,7 +1941,7 @@
 <tr><td><A NAME="ETOFSIM1">ETofSim</A></td><td>&nbsp;</td><td>ETofChain</td><td>&nbsp; </td><td>StETofSimMaker</td><td>StETofSimMaker</td><td>ETOF simulator</td></tr>
 <tr><td><A NAME="STGC1">stgc</A></td><td>STGCChain</td><td>&nbsp;</td><td><A HREF="#STGCDAT1">stgcDat</A> </td><td>StMaker</td><td>StChain</td><td>STGC Chain</td></tr>
 <tr><td><A NAME="STGCDAT1">stgcDat</A></td><td>stgc_raw</td><td>STGCChain</td><td><A HREF="#RTS1">rts</A> <A HREF="#DB1">db</A> <A HREF="#STGCUTIL1">StgcUtil</A> </td><td>StStgcHitMaker</td><td>StEvent StStgcHitMaker</td><td>sTGC raw maker</td></tr>
-<tr><td><A NAME="STGCQA1">stgcQA</A></td><td>stgc_qa</td><td>STGCChain</td><td><A HREF="#RTS1">rts</A> <A HREF="#DB1">db</A> <A HREF="#STGCUTIL1">StgcUtil</A> </td><td>StStgcQAMaker</td><td>StEvent StStgcQAMaker</td><td>sTGC QA maker</td></tr>
+<tr><td><A NAME="STGCQA1">stgcQA</A></td><td>stgc_qa</td><td>STGCChain</td><td><A HREF="#RTS1">rts</A> <A HREF="#DB1">db</A> <A HREF="#STGCUTIL1">StgcUtil</A> </td><td>StStgcQAMaker</td><td>StEvent StStgcQAMaker StStgcDbMaker</td><td>sTGC QA maker</td></tr>
 <tr><td><A NAME="MTDSIM1">mtdSim</A></td><td>&nbsp;</td><td>MtdChain</td><td>&nbsp; </td><td>StMtdSimMaker</td><td>StEvent StMtdSimMaker</td><td>MTD Simulator</td></tr>
 <tr><td><A NAME="TOF1">ToF</A></td><td>TofChain</td><td>&nbsp;</td><td><A HREF="#TOFDAT1">tofDat</A> <A HREF="#TOFRMATCH1">tofrMatch</A> <A HREF="#TOFPMATCH1">tofpMatch</A> <A HREF="#TOFCALIB1">tofCalib</A> <A HREF="#GEANT1">geant</A> </td><td>StMaker</td><td>StChain</td><td>ToF Chain</td></tr>
 <tr><td><A NAME="TOFX1">ToFx</A></td><td>TofChain</td><td>&nbsp;</td><td><A HREF="#TOFXDAT1">tofXDat</A> <A HREF="#TOFRMATCH1">tofrMatch</A> <A HREF="#TOFCALIB1">tofCalib</A> <A HREF="#GEANT1">geant</A> </td><td>StMaker</td><td>StChain</td><td>ToFx Chain</td></tr>
@@ -2142,6 +2142,6 @@
 <tr><td><A NAME="NEWTPCALIGNMENT1">NewTpcAlignment</A></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp;</td><td>&nbsp;</td><td>Switch on new Tpc Alignment schema</td></tr>
 <tr><td><A NAME="ALIASED1">Aliased</A></td><td>time stamps</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 </table>
-<h5>Created by BFCOpt2Html.pl on Thu Jul 11 07:59:10 2019 - J. Lauret</h5>
+<h5>Created by BFCOpt2Html.pl on Thu Jul 11 08:38:48 2019 - J. Lauret</h5>
 </body>
 </html>

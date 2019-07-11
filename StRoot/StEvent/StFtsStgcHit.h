@@ -16,6 +16,7 @@ public:
 	
 	unsigned short rdo() const { return mRdo; }
 	unsigned short sec() const { return mSec; }
+	unsigned short fee() const { return mFEE; }
 	unsigned short altro() const { return mAltro; }
 	unsigned short ch() const { return mCH; };
 	
@@ -35,6 +36,7 @@ protected:
 	UShort_t mRdo=0;
 	UShort_t mSec=0;
 	UShort_t mAltro=0;
+	UShort_t mFEE=0;
 	UShort_t mCH=0;
 	UShort_t mNTimebins=0;
 	TArrayS* mAdcs=0;

@@ -45,6 +45,7 @@ void StFtsStgcHit::setStgcHit( unsigned short rdo, unsigned short sec, unsigned 
 	mRdo = rdo;
 	mSec = sec;
 	mAltro = altro;
+	mFEE = altro / 2; // implicit floor
 	mCH = ch;
 
 	mNTimebins = ntbs;
