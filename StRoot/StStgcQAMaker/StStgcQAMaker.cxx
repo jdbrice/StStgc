@@ -1,12 +1,14 @@
 #include "StStgcQAMaker.h"
 
 #include "StEvent/StEvent.h"
+#include "StEvent/StEventInfo.h"
 #include "StEvent/StStgcCollection.h"
 #include "StEvent/StFtsStgcHit.h"
 
+
 #include "StChain/StChainOpt.h" // for renaming the histogram file
 
-
+#include <iostream>
 // ROOT
 #include "TH1F.h"
 #include "TH2F.h"
@@ -25,6 +27,8 @@ Int_t StStgcQAMaker::Make(){
 		return kStErr;
 	}
 
+	
+	LOG_INFO << "Processing Run : " << event->runId() << ", event : " << event->info()->id() << endm; 
 	LOG_INFO << "FOUND " << stgcColl->numberOfHits(0) << " sTGC Hits" << endm;
 
 
@@ -32,7 +36,12 @@ Int_t StStgcQAMaker::Make(){
 		LOG_INFO << "hit : " << h->rdo() << endm;
 
 		UInt_t dId = mStgcDbMaker->toId( h->fee(), h->altro(), h->ch() );
+		LOG_INFO << "dId = " << dId << endm;
+		Int_t stripIndex = mStgcDbMaker->stripIndex( dId );
+		LOG_INFO << "stripIndex = " << stripIndex << endm;
+
 		auto stripDir = mStgcDbMaker->stripOrientation( dId );
+
 		string sstripDir = "H";
 		if ( kStgcVerticalStrips == stripDir )
 			sstripDir = "V";
@@ -87,6 +96,7 @@ void StStgcQAMaker::BookHistograms(){
 		mHistograms[ name ] = new TH2F( name.c_str(), ";TB;ADC", 50, 0, 50, 1024, 0, 1024 );
 		name = prefix + "V_adcVsTb";
 		mHistograms[ name ] = new TH2F( name.c_str(), ";TB;ADC", 50, 0, 50, 1024, 0, 1024 );
+
 	}
 	
 }

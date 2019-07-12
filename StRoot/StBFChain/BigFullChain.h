@@ -1300,7 +1300,6 @@ Bfc_st BFC[] = { // standard chains
   {"TofUtil"     ,""  ,"","",""                                       ,"StTofUtil","Load StTofUtil",kFALSE},
   {"BTofUtil"    ,""  ,"","",""                                     ,"StBTofUtil","Load StBTofUtil",kFALSE},
   {"ETofUtil"    ,""  ,"","",""                                     ,"StETofUtil","Load StETofUtil",kFALSE},
-  {"StgcUtil"    ,""  ,"","",""                                     ,"StStgcDbMaker","Load StStgcDbMaker",kFALSE},
   {"MtdUtil"    ,""  ,"","",""                                        ,"StMtdUtil","Load StMtdUtil",kFALSE},
   {"StBichsel"   ,""  ,"","",""                         ,"StBichsel","Load Bichsel model for dE/dx",kFALSE},
   {"StEvent"   ,"","","globT,SCL,TRGDef,StBichsel,EmcUtil,TbUtil,detDb","","StEvent","Load StEvent",kFALSE},
@@ -1383,6 +1382,7 @@ Bfc_st BFC[] = { // standard chains
   {"istDb"       ,"istDb","","tpcDb",               "StIstDbMaker","StIstDbMaker","Load IstDbMaker",kFALSE},
 
   {"epdDb"       ,"epdDb","","tpcDb",               "StEpdDbMaker","StEpdDbMaker","Load EpdDbMaker",kFALSE},
+  {"stgcDb"      ,"stgcDb","","",                   "StStgcDbMaker","StStgcDbMaker","Load StStgcDbMaker",kFALSE},
 
   {"------------","-----------","-----------","------------------------------------------","","","",kFALSE},
   {"MAKERS      ","-----------","-----------","------------------------------------------","","","",kFALSE},
@@ -1602,9 +1602,9 @@ Bfc_st BFC[] = { // standard chains
                                                                                    "ETOF simulator",kFALSE},
   // sTGC Chains
   {"stgc",   "STGCChain","", "stgcDat", "StMaker",  "StChain", "STGC Chain", kFALSE},
-  {"stgcDat",   "stgc_raw","STGCChain", "rts,db,StgcUtil", "StStgcHitMaker",  "StEvent,StStgcHitMaker",
+  {"stgcDat",   "stgc_raw","STGCChain", "rts,db,stgcDb", "StStgcHitMaker",  "StEvent,StStgcHitMaker",
                                                                                   "sTGC raw maker",kFALSE},
-  {"stgcQA",   "stgc_qa","STGCChain", "rts,db,StgcUtil", "StStgcQAMaker",  "StEvent,StStgcQAMaker,StStgcDbMaker",
+  {"stgcQA",   "","STGCChain", "stgcDb",                      "StStgcQAMaker",  "StEvent,StStgcQAMaker",
                                                                                   "sTGC QA maker",kFALSE},
 
 

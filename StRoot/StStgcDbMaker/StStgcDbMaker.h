@@ -21,7 +21,7 @@ class StStgcDbMaker : public StMaker {
 		return kStOK;
 	}
 	virtual Int_t  InitRun(Int_t runNumber) {
-		LOG_DEBUG << "StStgcDbMaker::InitRun - run = " << runNumber << endm;
+		LOG_INFO << "StStgcDbMaker::InitRun - run = " << runNumber << endm;
 		//! Accessing DBs
 		if(mDebug>0) {
 			St_db_Maker* dbmaker = (St_db_Maker*)GetMaker("db");
@@ -52,6 +52,12 @@ class StStgcDbMaker : public StMaker {
 		return;
 	}
 
+	Int_t stripIndex( UInt_t id ){
+		if ( map_id_to_strip.count( id ) < 1 ){
+			return -1;
+		}
+		return map_id_to_strip[ id ];
+	}
 
 	Int_t stripOrientation( UInt_t id ){
 		UShort_t fee, altro, channel;
@@ -89,7 +95,7 @@ class StStgcDbMaker : public StMaker {
 
 
 	void makeMap(){
-
+		LOG_INFO << "Making Map of sTGC 2019 prototype" << endm;
 		// only 2019 prototype!
 		map_id_to_strip[ toId( 8, 16, 8 ) ] = 1;
 		map_id_to_strip[ toId( 8, 16, 9 ) ] = 2;
@@ -295,7 +301,7 @@ class StStgcDbMaker : public StMaker {
 	Int_t   mDebug=0;                        //! >0 dump tables to text files    
 	Int_t   mRun19=0;                        //!
 	
-	map<UShort_t, UShort_t> map_id_to_strip;
+	map<UInt_t, Int_t> map_id_to_strip;
 
 	virtual const Char_t *GetCVS() const {static const Char_t cvs[]="Tag $Name:" __DATE__ " " __TIME__ ; return cvs;}
 	ClassDef(StStgcDbMaker,1)   //StAF chain virtual base class for Makers    

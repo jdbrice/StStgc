@@ -8,19 +8,22 @@
 class StStgcQAMaker : public StMaker {
 
 public:
-	StStgcQAMaker(const Char_t *name="stgcDb") : StMaker(name) {}
+	StStgcQAMaker(const Char_t *name="stgcQA") : StMaker(name) {}
 	virtual ~StStgcQAMaker(){}
 
 	virtual Int_t  Init() {
 
-		mStgcDbMaker=static_cast<StStgcDbMaker*>(GetMaker("stgcDb"));
+		
 		BookHistograms();
 
 
 		return kStOK;
 	}
 	virtual Int_t  InitRun(Int_t runNumber) {
-		LOG_DEBUG << "StStgcQAMaker::InitRun - run = " << runNumber << endm;
+		LOG_INFO << "StStgcQAMaker::InitRun - run = " << runNumber << endm;
+		mStgcDbMaker=static_cast<StStgcDbMaker*>(GetMaker("stgcDb"));
+		LOG_INFO << "mStgcDbMaker = " << mStgcDbMaker << endm;
+
 		return kStOK;
 	}
 	virtual Int_t  Make();

@@ -692,7 +692,6 @@
 <tr><td><A NAME="TOFUTIL0">TofUtil</A></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp;</td><td>StTofUtil</td><td>Load StTofUtil</td></tr>
 <tr><td><A NAME="BTOFUTIL0">BTofUtil</A></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp;</td><td>StBTofUtil</td><td>Load StBTofUtil</td></tr>
 <tr><td><A NAME="ETOFUTIL0">ETofUtil</A></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp;</td><td>StETofUtil</td><td>Load StETofUtil</td></tr>
-<tr><td><A NAME="STGCUTIL0">StgcUtil</A></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp;</td><td>StStgcDbMaker</td><td>Load StStgcDbMaker</td></tr>
 <tr><td><A NAME="MTDUTIL0">MtdUtil</A></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp;</td><td>StMtdUtil</td><td>Load StMtdUtil</td></tr>
 <tr><td><A NAME="STBICHSEL0">StBichsel</A></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp;</td><td>StBichsel</td><td>Load Bichsel model for dE/dx</td></tr>
 <tr><td><A NAME="STEVENT0">StEvent</A></td><td>&nbsp;</td><td>&nbsp;</td><td><A HREF="#GLOBT0">globT</A> <A HREF="#SCL0">SCL</A> <A HREF="#TRGDEF0">TRGDef</A> <A HREF="#STBICHSEL0">StBichsel</A> <A HREF="#EMCUTIL0">EmcUtil</A> <A HREF="#TBUTIL0">TbUtil</A> <A HREF="#DETDB0">detDb</A> </td><td>&nbsp;</td><td>StEvent</td><td>Load StEvent</td></tr>
@@ -745,6 +744,7 @@
 <tr><td><A NAME="PXLDB0">pxlDb</A></td><td>pxlDb</td><td>&nbsp;</td><td><A HREF="#TPCDB0">tpcDb</A> <A HREF="#PXLUTIL0">PxlUtil</A> </td><td>StPxlDbMaker</td><td>StPxlDbMaker</td><td>Load PxlDbMaker</td></tr>
 <tr><td><A NAME="ISTDB0">istDb</A></td><td>istDb</td><td>&nbsp;</td><td><A HREF="#TPCDB0">tpcDb</A> </td><td>StIstDbMaker</td><td>StIstDbMaker</td><td>Load IstDbMaker</td></tr>
 <tr><td><A NAME="EPDDB0">epdDb</A></td><td>epdDb</td><td>&nbsp;</td><td><A HREF="#TPCDB0">tpcDb</A> </td><td>StEpdDbMaker</td><td>StEpdDbMaker</td><td>Load EpdDbMaker</td></tr>
+<tr><td><A NAME="STGCDB0">stgcDb</A></td><td>stgcDb</td><td>&nbsp;</td><td>&nbsp; </td><td>StStgcDbMaker</td><td>StStgcDbMaker</td><td>Load StStgcDbMaker</td></tr>
 <tr BGCOLOR="cornsilk"><td colspan="7"><A NAME="MAKERS0">MAKERS</A></td></tr>
 <tr><td><A NAME="NTIN0">ntin</A></td><td>geant</td><td>&nbsp;</td><td><A HREF="#PAW0">paw</A> -fzin -geant -gstar <A HREF="#SIMU0">Simu</A> <A HREF="#GEANTL0">geantL</A> <A HREF="#GSTARLIB0">gstarLib</A> </td><td>St_geant_Maker</td><td>&nbsp;</td><td>read event generated Hbook nt-file</td></tr>
 <tr><td><A NAME="PREPEMBED0">PrepEmbed</A></td><td>&nbsp;</td><td>&nbsp;</td><td><A HREF="#GEANTEMB0">geantEmb</A> </td><td>StPrepEmbedMaker</td><td>St_geant_Maker</td><td>Prepare kinematics for embedding</td></tr>
@@ -888,8 +888,8 @@
 <tr><td><A NAME="ETOFCALIB0">ETofCalib</A></td><td>&nbsp;</td><td>ETofChain</td><td><A HREF="#DB0">db</A> <A HREF="#ETOFUTIL0">ETofUtil</A> <A HREF="#MUDST0">muDst</A> </td><td>StETofCalibMaker</td><td>StETofCalibMaker</td><td>ETOF calibration</td></tr>
 <tr><td><A NAME="ETOFSIM0">ETofSim</A></td><td>&nbsp;</td><td>ETofChain</td><td>&nbsp; </td><td>StETofSimMaker</td><td>StETofSimMaker</td><td>ETOF simulator</td></tr>
 <tr><td><A NAME="STGC0">stgc</A></td><td>STGCChain</td><td>&nbsp;</td><td><A HREF="#STGCDAT0">stgcDat</A> </td><td>StMaker</td><td>StChain</td><td>STGC Chain</td></tr>
-<tr><td><A NAME="STGCDAT0">stgcDat</A></td><td>stgc_raw</td><td>STGCChain</td><td><A HREF="#RTS0">rts</A> <A HREF="#DB0">db</A> <A HREF="#STGCUTIL0">StgcUtil</A> </td><td>StStgcHitMaker</td><td>StEvent StStgcHitMaker</td><td>sTGC raw maker</td></tr>
-<tr><td><A NAME="STGCQA0">stgcQA</A></td><td>stgc_qa</td><td>STGCChain</td><td><A HREF="#RTS0">rts</A> <A HREF="#DB0">db</A> <A HREF="#STGCUTIL0">StgcUtil</A> </td><td>StStgcQAMaker</td><td>StEvent StStgcQAMaker StStgcDbMaker</td><td>sTGC QA maker</td></tr>
+<tr><td><A NAME="STGCDAT0">stgcDat</A></td><td>stgc_raw</td><td>STGCChain</td><td><A HREF="#RTS0">rts</A> <A HREF="#DB0">db</A> <A HREF="#STGCDB0">stgcDb</A> </td><td>StStgcHitMaker</td><td>StEvent StStgcHitMaker</td><td>sTGC raw maker</td></tr>
+<tr><td><A NAME="STGCQA0">stgcQA</A></td><td>&nbsp;</td><td>STGCChain</td><td><A HREF="#STGCDB0">stgcDb</A> </td><td>StStgcQAMaker</td><td>StEvent StStgcQAMaker</td><td>sTGC QA maker</td></tr>
 <tr><td><A NAME="MTDSIM0">mtdSim</A></td><td>&nbsp;</td><td>MtdChain</td><td>&nbsp; </td><td>StMtdSimMaker</td><td>StEvent StMtdSimMaker</td><td>MTD Simulator</td></tr>
 <tr><td><A NAME="TOF0">ToF</A></td><td>TofChain</td><td>&nbsp;</td><td><A HREF="#TOFDAT0">tofDat</A> <A HREF="#TOFRMATCH0">tofrMatch</A> <A HREF="#TOFPMATCH0">tofpMatch</A> <A HREF="#TOFCALIB0">tofCalib</A> <A HREF="#GEANT0">geant</A> </td><td>StMaker</td><td>StChain</td><td>ToF Chain</td></tr>
 <tr><td><A NAME="TOFX0">ToFx</A></td><td>TofChain</td><td>&nbsp;</td><td><A HREF="#TOFXDAT0">tofXDat</A> <A HREF="#TOFRMATCH0">tofrMatch</A> <A HREF="#TOFCALIB0">tofCalib</A> <A HREF="#GEANT0">geant</A> </td><td>StMaker</td><td>StChain</td><td>ToFx Chain</td></tr>
@@ -1744,7 +1744,6 @@
 <tr><td><A NAME="TOFUTIL1">TofUtil</A></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp;</td><td>StTofUtil</td><td>Load StTofUtil</td></tr>
 <tr><td><A NAME="BTOFUTIL1">BTofUtil</A></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp;</td><td>StBTofUtil</td><td>Load StBTofUtil</td></tr>
 <tr><td><A NAME="ETOFUTIL1">ETofUtil</A></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp;</td><td>StETofUtil</td><td>Load StETofUtil</td></tr>
-<tr><td><A NAME="STGCUTIL1">StgcUtil</A></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp;</td><td>StStgcDbMaker</td><td>Load StStgcDbMaker</td></tr>
 <tr><td><A NAME="MTDUTIL1">MtdUtil</A></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp;</td><td>StMtdUtil</td><td>Load StMtdUtil</td></tr>
 <tr><td><A NAME="STBICHSEL1">StBichsel</A></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp;</td><td>StBichsel</td><td>Load Bichsel model for dE/dx</td></tr>
 <tr><td><A NAME="STEVENT1">StEvent</A></td><td>&nbsp;</td><td>&nbsp;</td><td><A HREF="#GLOBT1">globT</A> <A HREF="#SCL1">SCL</A> <A HREF="#TRGDEF1">TRGDef</A> <A HREF="#STBICHSEL1">StBichsel</A> <A HREF="#EMCUTIL1">EmcUtil</A> <A HREF="#TBUTIL1">TbUtil</A> <A HREF="#DETDB1">detDb</A> </td><td>&nbsp;</td><td>StEvent</td><td>Load StEvent</td></tr>
@@ -1797,6 +1796,7 @@
 <tr><td><A NAME="PXLDB1">pxlDb</A></td><td>pxlDb</td><td>&nbsp;</td><td><A HREF="#TPCDB1">tpcDb</A> <A HREF="#PXLUTIL1">PxlUtil</A> </td><td>StPxlDbMaker</td><td>StPxlDbMaker</td><td>Load PxlDbMaker</td></tr>
 <tr><td><A NAME="ISTDB1">istDb</A></td><td>istDb</td><td>&nbsp;</td><td><A HREF="#TPCDB1">tpcDb</A> </td><td>StIstDbMaker</td><td>StIstDbMaker</td><td>Load IstDbMaker</td></tr>
 <tr><td><A NAME="EPDDB1">epdDb</A></td><td>epdDb</td><td>&nbsp;</td><td><A HREF="#TPCDB1">tpcDb</A> </td><td>StEpdDbMaker</td><td>StEpdDbMaker</td><td>Load EpdDbMaker</td></tr>
+<tr><td><A NAME="STGCDB1">stgcDb</A></td><td>stgcDb</td><td>&nbsp;</td><td>&nbsp; </td><td>StStgcDbMaker</td><td>StStgcDbMaker</td><td>Load StStgcDbMaker</td></tr>
 <tr BGCOLOR="cornsilk"><td colspan="7"><A NAME="MAKERS1">MAKERS</A></td></tr>
 <tr><td><A NAME="NTIN1">ntin</A></td><td>geant</td><td>&nbsp;</td><td><A HREF="#PAW1">paw</A> -fzin -geant -gstar <A HREF="#SIMU1">Simu</A> <A HREF="#GEANTL1">geantL</A> <A HREF="#GSTARLIB1">gstarLib</A> </td><td>St_geant_Maker</td><td>&nbsp;</td><td>read event generated Hbook nt-file</td></tr>
 <tr><td><A NAME="PREPEMBED1">PrepEmbed</A></td><td>&nbsp;</td><td>&nbsp;</td><td><A HREF="#GEANTEMB1">geantEmb</A> </td><td>StPrepEmbedMaker</td><td>St_geant_Maker</td><td>Prepare kinematics for embedding</td></tr>
@@ -1940,8 +1940,8 @@
 <tr><td><A NAME="ETOFCALIB1">ETofCalib</A></td><td>&nbsp;</td><td>ETofChain</td><td><A HREF="#DB1">db</A> <A HREF="#ETOFUTIL1">ETofUtil</A> <A HREF="#MUDST1">muDst</A> </td><td>StETofCalibMaker</td><td>StETofCalibMaker</td><td>ETOF calibration</td></tr>
 <tr><td><A NAME="ETOFSIM1">ETofSim</A></td><td>&nbsp;</td><td>ETofChain</td><td>&nbsp; </td><td>StETofSimMaker</td><td>StETofSimMaker</td><td>ETOF simulator</td></tr>
 <tr><td><A NAME="STGC1">stgc</A></td><td>STGCChain</td><td>&nbsp;</td><td><A HREF="#STGCDAT1">stgcDat</A> </td><td>StMaker</td><td>StChain</td><td>STGC Chain</td></tr>
-<tr><td><A NAME="STGCDAT1">stgcDat</A></td><td>stgc_raw</td><td>STGCChain</td><td><A HREF="#RTS1">rts</A> <A HREF="#DB1">db</A> <A HREF="#STGCUTIL1">StgcUtil</A> </td><td>StStgcHitMaker</td><td>StEvent StStgcHitMaker</td><td>sTGC raw maker</td></tr>
-<tr><td><A NAME="STGCQA1">stgcQA</A></td><td>stgc_qa</td><td>STGCChain</td><td><A HREF="#RTS1">rts</A> <A HREF="#DB1">db</A> <A HREF="#STGCUTIL1">StgcUtil</A> </td><td>StStgcQAMaker</td><td>StEvent StStgcQAMaker StStgcDbMaker</td><td>sTGC QA maker</td></tr>
+<tr><td><A NAME="STGCDAT1">stgcDat</A></td><td>stgc_raw</td><td>STGCChain</td><td><A HREF="#RTS1">rts</A> <A HREF="#DB1">db</A> <A HREF="#STGCDB1">stgcDb</A> </td><td>StStgcHitMaker</td><td>StEvent StStgcHitMaker</td><td>sTGC raw maker</td></tr>
+<tr><td><A NAME="STGCQA1">stgcQA</A></td><td>&nbsp;</td><td>STGCChain</td><td><A HREF="#STGCDB1">stgcDb</A> </td><td>StStgcQAMaker</td><td>StEvent StStgcQAMaker</td><td>sTGC QA maker</td></tr>
 <tr><td><A NAME="MTDSIM1">mtdSim</A></td><td>&nbsp;</td><td>MtdChain</td><td>&nbsp; </td><td>StMtdSimMaker</td><td>StEvent StMtdSimMaker</td><td>MTD Simulator</td></tr>
 <tr><td><A NAME="TOF1">ToF</A></td><td>TofChain</td><td>&nbsp;</td><td><A HREF="#TOFDAT1">tofDat</A> <A HREF="#TOFRMATCH1">tofrMatch</A> <A HREF="#TOFPMATCH1">tofpMatch</A> <A HREF="#TOFCALIB1">tofCalib</A> <A HREF="#GEANT1">geant</A> </td><td>StMaker</td><td>StChain</td><td>ToF Chain</td></tr>
 <tr><td><A NAME="TOFX1">ToFx</A></td><td>TofChain</td><td>&nbsp;</td><td><A HREF="#TOFXDAT1">tofXDat</A> <A HREF="#TOFRMATCH1">tofrMatch</A> <A HREF="#TOFCALIB1">tofCalib</A> <A HREF="#GEANT1">geant</A> </td><td>StMaker</td><td>StChain</td><td>ToFx Chain</td></tr>
@@ -2142,6 +2142,6 @@
 <tr><td><A NAME="NEWTPCALIGNMENT1">NewTpcAlignment</A></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp;</td><td>&nbsp;</td><td>Switch on new Tpc Alignment schema</td></tr>
 <tr><td><A NAME="ALIASED1">Aliased</A></td><td>time stamps</td><td>&nbsp;</td><td>&nbsp; </td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 </table>
-<h5>Created by BFCOpt2Html.pl on Thu Jul 11 08:38:48 2019 - J. Lauret</h5>
+<h5>Created by BFCOpt2Html.pl on Fri Jul 12 16:23:34 2019 - J. Lauret</h5>
 </body>
 </html>
