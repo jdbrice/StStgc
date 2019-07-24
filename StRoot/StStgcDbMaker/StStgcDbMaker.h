@@ -69,25 +69,39 @@ class StStgcDbMaker : public StMaker {
 	}
 
 	void globalPosition( UInt_t id, float &x, float &y, float &dx, float &dy, float &z, float &dz ){
-		
+		float localx = 0, localy = 0;
+		localPosition( id, localx, localy, dx, dy );
+		y = -72 + localy;
+		x = 76 + localX;
+		z = 670; // just a guess, maybe David did not measure z
+		dz = 1;
 	}
 
 	void localPosition( UInt_t id, float &x, float &y, float &dx, float &dy ){
 
+		// local coords:
+		// +y
+		// |
+		// |
+		// |
+		// |
+		// |
+		// |_________________ +x
+		// (0, 0)
 		Int_t stripDir = stripOrientation( id );
 		Int_t stripIndex = map_id_to_strip[ id ];
 		
-		const int STGC_HEIGHT = 0.30; // m
-		const int STGC_WIDTH  = 0.25; // m
+		const int STGC_HEIGHT = 30; // cm
+		const int STGC_WIDTH  = 30; // cm
 
 		if ( kStgcVerticalStrips == stripDir ){
-			dx = 0.0032; // 3.2 mm -> meters
-			dy = 0.3;
+			dx = 0.32; // 3.2 mm -> cm
+			dy = STGC_HEIGHT;
 			y = STGC_HEIGHT / 2.0;
 			x = STGC_WIDTH - dx * stripIndex;
 		} else {
-			dx = 0.3; 
-			dy = 0.0032; // 3.2 mm -> meters
+			dx = STGC_WIDTH; 
+			dy = 0.32; // 3.2 mm -> cm
 			y = STGC_HEIGHT - dy * stripIndex;
 			x = STGC_WIDTH / 2.0;
 		}

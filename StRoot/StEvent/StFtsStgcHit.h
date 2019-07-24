@@ -28,6 +28,7 @@ public:
 	unsigned short adc(int i) const;
 	void setData(int ntimebin, const unsigned short* adcs, const unsigned short *tbs);
 	
+	int   adcSum( int tb0, int tb1 ) const;
 	int   adcSum() const;
 	
 	void print(Option_t *option="") const;

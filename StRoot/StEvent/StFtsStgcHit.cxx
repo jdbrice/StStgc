@@ -67,3 +67,16 @@ int StFtsStgcHit::adcSum() const{
 	}
 	return sum;
 }
+
+
+int StFtsStgcHit::adcSum( int tb0, int tb1 ) const{
+	unsigned int sum = 0;
+	if ( tb0 >= mNTimebins || tb1 >= mNTimebins )
+		return 0;
+
+
+	for ( size_t i = tb0; i < tb1; i++ ){
+		sum+=adc(i);
+	}
+	return sum;
+}
